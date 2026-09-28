@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventos y grupos — Las Deliciosas Gorditas del Portal</title>
+<meta name="description" content="Cotiza tu evento privado, posada, cumpleaños o comida de grupo en Las Deliciosas Gorditas del Portal, Centro Histórico de Querétaro.">
+<link rel="canonical" href="https://gorditasdelportal.mx/eventos.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="styles.css?v=20260925c">
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-brand">
+      <span class="sello" data-sello="load" aria-hidden="true"></span>
+      <span class="nav-wordmark"><strong>Gorditas del Portal</strong><span>Centro Histórico · Qro</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Carta</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="eventos.html" class="is-active">Eventos y grupos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="contacto.html" class="btn btn-ghost">Cómo llegar</a>
+      <a href="eventos.html" class="btn btn-primary">Eventos y grupos</a>
+      <button class="nav-burger" aria-label="Abrir menú" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Inicio</a>
+    <a href="menu.html">Carta</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="eventos.html">Eventos y grupos</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="eventos.html" class="btn btn-primary">Eventos y grupos</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Inicio</a> / Eventos y grupos</div>
+      <span class="eyebrow">Grupos y eventos privados</span>
+      <h1>No reservamos mesas — pero sí armamos tu evento</h1>
+      <p class="lede">Cumpleaños, posadas, comidas de trabajo o cualquier grupo de más de 8 personas: cuéntanos qué necesitas en 3 pasos y te cotizamos por WhatsApp, sin compromiso.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:1rem;">
+    <div class="container">
+
+      <form class="form-shell" data-event-form novalidate>
+        <div class="form-progress">
+          <div class="form-progress-step"></div>
+          <div class="form-progress-step"></div>
+          <div class="form-progress-step"></div>
+        </div>
+
+        <!-- Paso 1: tipo de evento -->
+        <div class="form-step">
+          <h3>¿Qué tipo de reunión es?</h3>
+          <p class="lede">Elige la opción que más se parezca a lo que tienes en mente.</p>
+          <div class="option-grid" data-option-group="tipo">
+            <button type="button" class="option-card" data-option="Cumpleaños"><strong>🎂 Cumpleaños</strong><span>Mesa festejada</span></button>
+            <button type="button" class="option-card" data-option="Posada o fin de año"><strong>🎄 Posada</strong><span>Fin de año</span></button>
+            <button type="button" class="option-card" data-option="Comida de trabajo"><strong>💼 Trabajo</strong><span>Equipo u oficina</span></button>
+            <button type="button" class="option-card" data-option="Evento privado"><strong>✨ Privado</strong><span>Grupo cerrado</span></button>
+            <button type="button" class="option-card" data-option="Grupo grande / turistas"><strong>🚌 Grupo grande</strong><span>Tour o visita</span></button>
+            <button type="button" class="option-card" data-option="Otro"><strong>🍽️ Otro</strong><span>Cuéntanos tú</span></button>
+          </div>
+        </div>
+
+        <!-- Paso 2: tamaño y fecha -->
+        <div class="form-step">
+          <h3>¿Cuántos son y cuándo?</h3>
+          <p class="lede">Una fecha tentativa es suficiente — la confirmamos por WhatsApp.</p>
+          <div class="field">
+            <label for="personas">Número de personas aproximado</label>
+            <select id="personas" name="personas" required>
+              <option value="">Selecciona una opción</option>
+              <option>8 a 15 personas</option>
+              <option>16 a 30 personas</option>
+              <option>31 a 50 personas</option>
+              <option>Más de 50 personas</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fecha">Fecha tentativa</label>
+            <input type="date" id="fecha" name="fecha" required>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-ghost" data-prev>Atrás</button>
+            <button type="button" class="btn btn-primary" data-next>Continuar</button>
+          </div>
+        </div>
+
+        <!-- Paso 3: datos de contacto -->
+        <div class="form-step">
+          <h3>¿A quién le confirmamos?</h3>
+          <p class="lede">Solo lo necesario para contactarte por WhatsApp o llamada.</p>
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" required autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="mensaje">Algo más que debamos saber (opcional)</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Alergias, presupuesto aproximado, si necesitan un espacio específico…"></textarea>
+          </div>
+          <div class="form-summary" data-form-summary></div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-ghost" data-prev>Atrás</button>
+            <button type="submit" class="btn btn-gold">Enviar por WhatsApp</button>
+          </div>
+        </div>
+
+        <!-- Éxito -->
+        <div class="form-step" data-form-success>
+          <div class="form-success">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#e2531b" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+            <h3>¡Va en camino!</h3>
+            <p>Se abrió WhatsApp con tu solicitud lista para enviar. Si no se abrió automáticamente, usa el botón de abajo.</p>
+            <a href="#" data-whatsapp-link target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1.4rem;">Abrir WhatsApp</a>
+          </div>
+        </div>
+      </form>
+
+      <p style="text-align:center;color:var(--cream-3);font-size:.85rem;margin-top:2rem;">
+        ¿Prefieres llamar? <a data-brand-phone-href href="tel:+524423129831" style="color:var(--gold);">Marca al <span data-brand-phone>442 312 9831</span></a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="sello" data-sello="view" aria-hidden="true"></span>
+          <strong>Las Deliciosas Gorditas del Portal</strong>
+        </div>
+        <p style="color:var(--cream-3);font-size:.9rem;max-width:32ch;">Antojitos queretanos de siempre, en el Centro Histórico de Querétaro.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visítanos</h4>
+        <p data-brand-address>And. Libertad 8, Centro, 76000 Santiago de Querétaro, Qro.</p>
+        <a data-brand-phone-href href="tel:+524423129831"><span data-brand-phone>442 312 9831</span></a>
+        <a data-brand-maps href="#" target="_blank" rel="noopener">Cómo llegar →</a>
+      </div>
+      <div class="footer-col">
+        <h4>Explora</h4>
+        <a href="menu.html">Carta</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="eventos.html">Eventos y grupos</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <a data-brand-facebook href="#" target="_blank" rel="noopener">Facebook</a>
+        <a data-brand-instagram href="#" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Las Deliciosas Gorditas del Portal.</span>
+      <div class="footer-social">
+        <a data-brand-facebook href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/></svg></a>
+        <a data-brand-instagram href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script defer src="lib/manifest.js"></script>
+<script defer src="main.js?v=20260925c"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
