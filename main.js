@@ -20,37 +20,21 @@
 
   /* ---------- Mounts (idempotent) ---------- */
 
+  var DISH_ICON = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M7 12c0-2.8 2.2-5 5-5s5 2.2 5 5"/><path d="M12 7V4M9 4.5V3M15 4.5V3"/></svg>';
+  var DISH_TONES = ["accent", "accent-2", "gold"];
+
   function mountDishes() {
     var target = $("[data-dishes]");
     if (!target || target.children.length > 0 || !data.dishes) return;
-    target.innerHTML = data.dishes.map(function (d) {
+    target.innerHTML = data.dishes.map(function (d, i) {
+      var tone = DISH_TONES[i % DISH_TONES.length];
       return (
-        '<article class="dish-card reveal" data-tilt>' +
-          '<div class="dish-media">' +
-            '<span class="dish-tag">' + escHTML(d.tag) + "</span>" +
-            '<img src="' + escHTML(d.photo) + '" alt="' + escHTML(d.name) + '" loading="lazy" decoding="async" />' +
-          "</div>" +
+        '<article class="dish-card dish-card-icon reveal" data-tilt>' +
+          '<div class="dish-icon tone-' + tone + '">' + DISH_ICON + "</div>" +
+          '<span class="dish-tag dish-tag-flat">' + escHTML(d.tag) + "</span>" +
           '<div class="dish-body">' +
             "<h3>" + escHTML(d.name) + "</h3>" +
             "<p>" + escHTML(d.desc) + "</p>" +
-          "</div>" +
-        "</article>"
-      );
-    }).join("");
-  }
-
-  function mountTestimonials() {
-    var target = $("[data-testimonials]");
-    if (!target || target.children.length > 0 || !data.testimonials) return;
-    target.innerHTML = data.testimonials.map(function (t) {
-      var initial = (t.author || "?").trim().charAt(0);
-      return (
-        '<article class="testi-card reveal">' +
-          '<div class="testi-stars">★★★★★</div>' +
-          '<p class="testi-quote">“' + escHTML(t.quote) + '”</p>' +
-          '<div class="testi-foot">' +
-            '<div class="testi-avatar">' + escHTML(initial) + "</div>" +
-            "<div><strong>" + escHTML(t.author) + '</strong><span>' + escHTML(t.meta) + "</span></div>" +
           "</div>" +
         "</article>"
       );
@@ -69,12 +53,14 @@
   function fillBrandFields() {
     $$("[data-brand-phone]").forEach(function (el) { el.textContent = data.phone || ""; });
     $$("[data-brand-phone-href]").forEach(function (el) { el.setAttribute("href", data.phoneHref || "#"); });
+    $$("[data-brand-email]").forEach(function (el) { el.textContent = data.email || ""; });
+    $$("[data-brand-email-href]").forEach(function (el) { el.setAttribute("href", "mailto:" + (data.email || "")); });
     $$("[data-brand-address]").forEach(function (el) { el.textContent = data.address || ""; });
     $$("[data-brand-maps]").forEach(function (el) { el.setAttribute("href", data.mapsHref || "#"); });
     $$("[data-brand-facebook]").forEach(function (el) { el.setAttribute("href", data.facebook || "#"); });
     $$("[data-brand-instagram]").forEach(function (el) { el.setAttribute("href", data.instagram || "#"); });
-    $$("[data-brand-rating]").forEach(function (el) { el.textContent = data.rating || ""; });
-    $$("[data-brand-reviews]").forEach(function (el) { el.textContent = data.reviewCount || ""; });
+    $$("[data-brand-recommend-pct]").forEach(function (el) { el.textContent = data.recommendPct || ""; });
+    $$("[data-brand-recommend-count]").forEach(function (el) { el.textContent = data.recommendCount || ""; });
   }
 
   /* ---------- Sello (medallón) — marca gráfica original ---------- */
@@ -353,7 +339,6 @@
   function boot() {
     safe(fillBrandFields, "fillBrandFields");
     safe(mountDishes, "mountDishes");
-    safe(mountTestimonials, "mountTestimonials");
     safe(mountMarquee, "mountMarquee");
     safe(mountSellos, "mountSellos");
     safe(initNav, "initNav");

@@ -402,6 +402,21 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.05; letter-spacing: -0.01em;
 .dish-body h3 { font-size: 1.25rem; color: var(--cream); }
 .dish-body p { margin-top: .5rem; color: var(--cream-3); font-size: .92rem; }
 
+.dish-card-icon { padding: 1.6rem 1.5rem 1.7rem; position: relative; }
+.dish-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: grid; place-items: center; margin-bottom: 1.1rem;
+}
+.dish-icon.tone-accent   { background: rgba(226,83,27,.12); color: var(--accent); }
+.dish-icon.tone-accent-2 { background: rgba(183,36,31,.1);  color: var(--accent-2); }
+.dish-icon.tone-gold     { background: rgba(201,147,46,.14); color: var(--gold-2); }
+.dish-tag-flat {
+  position: absolute; top: 1.6rem; right: 1.5rem;
+  font-family: var(--mono); font-size: .66rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--accent-2);
+}
+.dish-card-icon .dish-body { padding: 0; }
+
 /* =============================================================
    11. Ambiente / franja de imagen ancha
    ============================================================= */
@@ -438,6 +453,29 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.05; letter-spacing: -0.01em;
 .authority-list { margin-top: 1.6rem; display: grid; gap: .9rem; }
 .authority-list li { display: flex; gap: .8rem; align-items: flex-start; color: var(--cream-2); font-size: .95rem; }
 .authority-list li svg { flex-shrink: 0; margin-top: .2rem; color: var(--gold); }
+
+/* =============================================================
+   12.5 Prueba social real (posts embebidos) + banda de confianza
+   ============================================================= */
+.social-proof-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.social-proof-item {
+  display: block; border-radius: 16px; overflow: hidden; aspect-ratio: 1;
+  border: 1px solid var(--line); transition: transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
+}
+.social-proof-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.social-proof-item img { width: 100%; height: 100%; object-fit: cover; }
+
+.trust-band {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 2.2rem;
+  background: var(--bg-3); border: 1px solid var(--line); border-radius: 22px;
+  padding: clamp(1.8rem, 4vw, 2.8rem);
+}
+.trust-stat {
+  font-family: var(--serif); font-size: clamp(3.4rem, 7vw, 5rem); line-height: 1; color: var(--accent);
+  display: flex; align-items: flex-start; flex-shrink: 0;
+}
+.trust-stat span { font-size: .4em; margin-top: .3em; }
+.trust-copy { flex: 1; min-width: 240px; }
 
 /* =============================================================
    13. Testimonios
