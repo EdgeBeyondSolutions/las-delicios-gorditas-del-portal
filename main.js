@@ -31,7 +31,7 @@
       return (
         '<article class="dish-card dish-card-icon reveal" data-tilt>' +
           '<div class="dish-icon tone-' + tone + '">' + DISH_ICON + "</div>" +
-          '<span class="dish-tag dish-tag-flat">' + escHTML(d.tag) + "</span>" +
+          '<span class="dish-tag-flat">' + escHTML(d.tag) + "</span>" +
           '<div class="dish-body">' +
             "<h3>" + escHTML(d.name) + "</h3>" +
             "<p>" + escHTML(d.desc) + "</p>" +
