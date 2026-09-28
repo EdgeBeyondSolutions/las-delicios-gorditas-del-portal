@@ -309,11 +309,14 @@ h1, h2, h3, h4 { text-wrap: balance; line-height: 1.05; letter-spacing: -0.01em;
 .hero-actions .btn-ghost { color: #fbf1e2; border-color: rgba(251,241,226,.4); }
 .hero-actions .btn-ghost:hover { background: rgba(251,241,226,.1); }
 .hero-meta {
-  margin-top: 1.6rem; display: flex; flex-wrap: wrap; gap: 1.2rem;
+  margin-top: 1.6rem; display: flex; flex-wrap: wrap; gap: .6rem 1.2rem;
   font-family: var(--mono); font-size: .78rem; color: #c7ad8d;
 }
-.hero-meta span { display: inline-flex; align-items: center; gap: .5rem; }
-.hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: #7fbf6a; box-shadow: 0 0 0 3px rgba(127,191,106,.2); }
+.hero-meta-item { display: inline-flex; align-items: center; gap: .5rem; flex-shrink: 0; }
+.hero-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: #7fbf6a; box-shadow: 0 0 0 3px rgba(127,191,106,.2); flex-shrink: 0; }
+@media (max-width: 539px) {
+  .hero-meta { flex-direction: column; align-items: flex-start; gap: .6rem; }
+}
 
 .hero-scroll {
   display: none;
